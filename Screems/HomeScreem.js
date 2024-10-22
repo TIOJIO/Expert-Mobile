@@ -8,7 +8,7 @@ const HomeScreen = () => {
     <View>
       <CustumHeader/>
       <ScrollView style={styles.container}>
-        <Text style={{fontWeight:'bold',padding:10,fontSize:20}}>Home Screen</Text>
+        <Text style={{fontWeight:'bold',padding:10,fontSize:20}}>Home h Screen</Text>
 
         <Image
             source={require('../images/flyer.jpeg')}
