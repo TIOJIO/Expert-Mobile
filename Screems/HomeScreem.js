@@ -4,11 +4,11 @@ import { View, Text, StyleSheet,ScrollView ,Image} from 'react-native';
 import CustumHeader from './CustumHeader';
 
 const HomeScreen = () => {
-  return (
+  return ( 
     <View>
       <CustumHeader/>
       <ScrollView style={styles.container}>
-        <Text style={{fontWeight:'bold',padding:10,fontSize:20}}>Home Screen</Text>
+         <Text style={{fontWeight:'bold',padding:10,fontSize:20}}>Home Screen</Text>
 
         <Image
             source={require('../images/flyer.jpeg')}
