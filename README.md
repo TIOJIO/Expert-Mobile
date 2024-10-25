@@ -14,3 +14,12 @@ RESUME : Il s'agit de l'application mobile du système expert qui aura pour prin
 4) Consulter l'historique des recherches.
    
 5) Consulter les résultats d'une recherche précédente.
+
+## Configuration de l'environnement de developpement
+- installation de expo cli en invite de commande : npm install expo-cli
+- installation de node js
+
+## Creation du projet et lancement
+- expo int Flex
+- cd Flex
+- npx expo start
