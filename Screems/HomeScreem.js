@@ -1,39 +1,55 @@
-// HomeScreen.js
-import React from 'react';
-import { View, Text, StyleSheet,ScrollView ,Image} from 'react-native';
-import CustumHeader from './CustumHeader';
+import React, { useState } from 'react';
+import { View, StyleSheet, TextInput, Button, Alert } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
 
-const HomeScreen = () => {
+export default function App() {
+   const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = () => {
+    if (searchQuery.trim() === '') {
+      Alert.alert('Erreur', 'Veuillez entrer un mot clé pour la recherche');
+    } else {
+      // Logique pour consommer les données de l'API de Facebook
+      // fetchDataFromFacebookAPI(searchQuery);
+      Alert.alert('Recherche', `Recherche pour : ${searchQuery}`);
+    }
+  };
+
   return (
-    <View>
-      <CustumHeader/>
-      <ScrollView style={styles.container}>
-        <Text style={{fontWeight:'bold',padding:10,fontSize:20}}>Home Screen</Text>
-
-        <Image
-            source={require('../images/flyer.jpeg')}
-            style={{width: 'auto', height: 300,borderRadius:10,marginBottom:10 }}
+    <PaperProvider>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Rechercher dans les forums..."
+          value={searchQuery}
+          onChangeText={(text) => setSearchQuery(text)}
         />
-
-        <Image
-            source={require('../images/devte.png')}
-            style={{width: 'auto', height: 300,borderRadius:10,marginBottom:10 }}
-        />
-
-       <Image
-            source={require('../images/flyer.jpeg')}
-            style={{width: 'auto', height: 300,borderRadius:10,marginBottom:10 }}
-        />
-      </ScrollView>
-    </View>
+        <View style={styles.searchButton}>
+          <Button title="Rechercher" onPress={handleSearch} />
+        </View>
+      </View>
+    </PaperProvider>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft:10,
-    marginRight:10
+    flex: 1,
+    justifyContent: 'center',
+    padding: 20,
+    backgroundColor: '#f4f4f4',
+  },
+  searchInput: {
+    height: 50,
+    borderColor: '#ddd',
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingLeft: 10,
+    marginBottom: 20,
+    backgroundColor: '#fff',
+  },
+  searchButton: {
+    borderRadius: 10,
+    overflow: 'hidden',
   },
 });
-
-export default HomeScreen;
