@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation-stack';
  import { createAppContainer } from 'react-navigation';
-import Home from '../Screems/Home';
+import Home from '../Screems/HomeScreem';
 import Colors from '../Constant/Colors';
 
 

@@ -5,7 +5,7 @@ const TypingAnimation = () => {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const typingSpeed = 100; // Vitesse de saisie en millisecondes
-  const textToType = 'Welcom back !!'; // Texte à afficher avec l'animation
+  const textToType = 'Welcom back'; // Texte à afficher avec l'animation
 
   useEffect(() => {
     if (index < textToType.length) {
@@ -35,11 +35,13 @@ export default function CustumHeader({title , isHome , navigation}){
           </View>
          <View style={{marginRight:20,marginTop:30}}>
              <TouchableOpacity  >
+
              <Image
-            source={require('../images/profil.jpg')}
-            style={{marginLeft:110, width: 52, height: 52,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
-        />
+              source={require('../images/user.png')}
+              style={{marginLeft:110, width: 40, height: 40,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
+            />
              </TouchableOpacity>
+             
         </View>
         
     </View>
