@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, TextInput, Text, Image, FlatList } from 'react-native';
 import CustumHeader from './CustumHeader';
-import { Button, Card, Avatar, IconButton } from 'react-native-paper';
+import { Button, Card, Avatar, IconButton , Icon } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const data = [
     {
       id: 1,
       name: 'Ferarie',
-      description: 'A delicious red fruit.',
+      description: 'A delicious red fruit A delicious red fruit A delicious red fruit A delicious red fruit A delicious red fruit.',
       image: require('../images/v1.png'), // Utilisez require pour une image locale
     },
     {
       id: 2,
       name: 'Mustande',
-      description: 'A yellow tropical fruit.',
+      description: 'A yellow tropical fruit A yellow tropical fruitA yellow tropical fruitA yellow tropical fruitA yellow tropical fruit.',
       image: require('../images/v2.png'),
     },
     {
       id: 3,
       name: 'Tesla',
-      description: 'A citrus fruit rich in vitamin C.',
+      description: 'A citrus fruit rich in vitamin C A citrus fruit rich in vitamin CA citrus fruit rich in vitamin CA citrus fruit rich in vitamin C.',
       image: require('../images/v3.png'),
     },
     {
       id: 4,
       name: 'Porche',
-      description: 'A citrus fruit rich in vitamin C.',
+      description: 'A citrus fruit rich in vitamin C A citrus fruit rich in vitamin CA citrus fruit rich in vitamin C.',
       image: require('../images/v4.png'),
     },
     {
@@ -54,7 +56,7 @@ const HomeScreen = () => {
   };
 
   const renderItem = ({ item }) => (
-    <Card style={styles.card}>
+    <Card style={styles.card} onPress={() => navigation.navigate('Details', { item })}>
       <Card.Title
         title={item.name}
         subtitle={item.description}
@@ -63,8 +65,8 @@ const HomeScreen = () => {
       />
       <Image source={item.image} style={styles.cardImage} />
       <Card.Actions>
-        <Button>Consult</Button>
-        <Button>Share</Button>
+        <Button style={{width:80,height:40}}> <Icon source="message"size={20}/></Button>
+        <Button style={{width:80,height:40}}> <Icon source="share"size={20}/></Button>
       </Card.Actions>
     </Card>
   );

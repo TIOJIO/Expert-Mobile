@@ -9,6 +9,7 @@ import LoginScreen from './Auth/LoginScrem';
 import HomeScreen from './Screems/HomeScreem';
 import ViewScreen from './Screems/ViewScreem';
 import AccountScreen from './Screems/AccountScreem';
+import DetailScreen from './Screems/DetailScreem';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -58,8 +59,8 @@ export default function App() {
       <Stack.Navigator>
        
           <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
-     
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Details" component={DetailScreen}  />
       
       </Stack.Navigator>
     </NavigationContainer>
