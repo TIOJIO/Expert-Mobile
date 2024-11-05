@@ -37,7 +37,7 @@ function HomeTabs() {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      <Tab.Screen name="View" component={ViewScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="ChatBot" component={ViewScreen} />
       <Tab.Screen name="Account" component={AccountScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
