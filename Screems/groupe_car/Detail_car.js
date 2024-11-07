@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
+import { View, Text, StyleSheet, Animated , ScrollView } from 'react-native';
 import { Button, Card, Avatar, IconButton , Icon } from 'react-native-paper';
+import { List } from 'react-native-paper';
 
 
 const DetailScreen = ({ route }) => {
-  const { item } = route.params; // Récupérer l'élément passé via la navigation
-
-  // Créez une valeur animée pour la rotation
+  const { item } = route.params; 
+  const [expanded, setExpanded] = React.useState(true);
+  const handlePress = () => setExpanded(!expanded);
   const rotation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const DetailScreen = ({ route }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
         
         <View style={{height:'auto',flexDirection:'row',justifyContent:'space-between',backgroundColor:'white',borderBottomLeftRadius:3,borderBottomRightRadius:3,width:'100%',alignItems:'center'}}>
             <View style={{marginLeft:20,marginTop:30, fontWeight: 'bold',}}>
@@ -61,11 +62,43 @@ const DetailScreen = ({ route }) => {
       <Text  style={styles.title}>caractéristiques</Text> 
       <Text style={styles.description}>{item.caractéristique}</Text>
 
-      <Card.Actions>
+
+
+
+      <List.Section >
+      <List.Accordion
+        title="commentaire"
+        left={props => <List.Icon {...props} icon="folder" />}>
+        <List.Item 
+            left={(props) => <Avatar.Image size={25}  source={item.userprofil}></Avatar.Image>}
+             title="j'ai besoin d'une couleur noir">
+        </List.Item>
+
+        <List.Item 
+            left={(props) => <Avatar.Image size={25}  source={item.userprofil}></Avatar.Image>}
+             title="salut ">
+        </List.Item>
+
+        <List.Item 
+            left={(props) => <Avatar.Image size={25}  source={item.userprofil}></Avatar.Image>}
+             title="cette voiture est la meilleur voiture  ">
+        </List.Item>
+
+        <List.Item 
+            left={(props) => <Avatar.Image size={25}  source={item.userprofil}></Avatar.Image>}
+             title="elle coutait avant 1000$ ">
+        </List.Item>
+      </List.Accordion>
+
+      
+    </List.Section>
+
+
+    <Card.Actions>
         <Button style={{width:80,height:40}}> <Icon source="message"size={20}/></Button>
         <Button style={{width:80,height:40}}> <Icon source="share"size={20}/></Button>
       </Card.Actions>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -3,13 +3,18 @@ import { View, StyleSheet, TextInput, Text, Image, FlatList } from 'react-native
 import CustumHeader from '../CustumHeader';
 import { Button, Card, Avatar, IconButton , Icon } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import {Datas} from '../../Constant/data'
+import {Datas} from '../../Constant/data';
+import {  Dialog, Portal, PaperProvider,Checkbox } from 'react-native-paper';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
+  const [visible, setVisible] = React.useState(false);
+  const showDialog = () => setVisible(true);
+  const hideDialog = () => setVisible(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredData, setFilteredData] = useState(Datas);
+  const [checked, setChecked] = React.useState(false);
 
   const handleSearch = (text) => {
     setSearchQuery(text);
@@ -42,7 +47,7 @@ const HomeScreen = () => {
   );
 
   return ( 
-    <View >
+    <PaperProvider>
       <CustumHeader head={false}/>
       <View style={styles.search}>
             <TextInput
@@ -54,9 +59,9 @@ const HomeScreen = () => {
         <View style={styles.searchButton}>
           <Button 
             style={{backgroundColor:'#003366'}} 
-            icon="magnify" 
+            icon="filter" 
             mode="contained" 
-            onPress={() => handleSearch(searchQuery)}
+            onPress={showDialog}
           />
         </View>
       </View>
@@ -70,7 +75,40 @@ const HomeScreen = () => {
             renderItem={renderItem}
         />
      </View>
-    </View>
+
+     <Portal>
+          <Dialog visible={visible} onDismiss={hideDialog}>
+            <Dialog.Title>Personnaliser vos Recherches</Dialog.Title>
+            <Dialog.Content>
+              <Text variant="bodyMedium">data et heure<Checkbox
+                    status={checked ? 'checked' : 'unchecked'}
+                    onPress={() => {
+                        setChecked(!checked);
+                    }}
+                />
+                </Text>
+                <Text variant="bodyMedium">Caracteristique<Checkbox
+                    status={checked ? 'checked' : 'unchecked'}
+                    onPress={() => {
+                        setChecked(!checked);
+                    }}
+                />
+                </Text>
+                <Text variant="bodyMedium">commentaires<Checkbox
+                    status={checked ? 'checked' : 'unchecked'}
+                    onPress={() => {
+                        setChecked(!checked);
+                    }}
+                />
+                </Text>
+              
+            </Dialog.Content>
+            <Dialog.Actions>
+              <Button onPress={hideDialog}>Valider</Button>
+            </Dialog.Actions>
+          </Dialog>
+        </Portal>
+    </PaperProvider>
   );
 };
 
