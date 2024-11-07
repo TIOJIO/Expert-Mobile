@@ -19,7 +19,18 @@ RESUME : Il s'agit de l'application mobile du système expert qui aura pour prin
 - installation de expo cli en invite de commande : npm install expo-cli
 - installation de node js
 
-## Creation du projet et lancement
+# Environnement et lancement du projet
+##Environnement 
+- installer expocli en cmd : npm install expo-cli
+- installer l'IDE : VScode
+
+## Lancement 
+- cloner le projet : git clone https://github.com/TIOJIO/Expert-Mobile.git
 - expo int Flex
 - cd Flex
+- npm install
 - npx expo start
+
+## déploiement
+- eas build -p android --preview
+- heberger temporairement sur : https://expo.dev/accounts/tiojio/projects/FLEX
