@@ -1,58 +1,78 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, ScrollView, StyleSheet } from 'react-native';
+import axios from 'axios';
+import { IconButton } from 'react-native-paper';
 
-const ChatScreen = () => {
+const PALM_API_KEY = 'AIzaSyA7zZ2RJfWIQ0IMc21hfpCIRfmY6Rv3iBg';
 
-  const PALM_API_KEY='AIzaSyA7zZ2RJfWIQ0IMc21hfpCIRfmY6Rv3iBg'
-  const [messages, setMessages] = useState([]);
-  const [inputText, setInputText] = useState('');
+const ChatbotScreen = () => {
+  const [userMessage, setUserMessage] = useState('');
+  const [chatHistory, setChatHistory] = useState([
+    { role: 'model', text: 'Bonjour ! \n\nComment puis-je vous aider aujourd\'hui ?' },
+  ]);
+  const [loading, setLoading] = useState(false);
 
-  // Fonction pour envoyer un message
-  const handleSend = () => {
-    if (inputText.trim() === '') return;
+  const handleSendMessage = async () => {
+    if (!userMessage.trim()) return;
 
-    // Ajouter le message de l'utilisateur
-    const userMessage = { id: Date.now().toString(), text: inputText, sender: 'user' };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
+    const newChatHistory = [
+      ...chatHistory,
+      { role: 'user', text: userMessage },
+    ];
+    setChatHistory(newChatHistory);
+    setUserMessage('');
+    setLoading(true);
 
-    // Effacer l'input
-    setInputText('');
+    try {
+      const response = await axios.post(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?'+PALM_API_KEY,
+        {
+          prompt: userMessage,
+          temperature: 1,
+          maxOutputTokens: 8192,
+          topP: 0.95,
+          topK: 64,
+          responseMimeType: 'text/plain',
+        },
+        {
+          headers: {
+            'Authorization': `Bearer ${PALM_API_KEY}`,
+          },
+        }
+      );
 
-    // Réponse automatique
-    const botMessage = { id: (Date.now() + 1).toString(), text: 'Bonjour', sender: 'bot' };
-    setMessages((prevMessages) => [...prevMessages, userMessage, botMessage]);
+      const botMessage = response.data.text || "Désolé, je n'ai pas pu comprendre votre message.";
+      setChatHistory([...newChatHistory, { role: 'model', text: botMessage }]);
+    } catch (error) {
+      console.error(error);
+      setChatHistory([...newChatHistory, { role: 'model', text: 'Une erreur est survenue, veuillez réessayer.' }]);
+    } finally {
+      setLoading(false);
+    }
   };
-
-  // Rendu des messages
-  const renderMessage = ({ item }) => (
-    <View
-      style={[
-        styles.messageContainer,
-        item.sender === 'user' ? styles.userMessage : styles.botMessage,
-      ]}
-    >
-       <Text style={styles.messageText}>{item.text}</Text>
-    </View>
-  );
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={messages}
-        keyExtractor={(item) => item.id}
-        renderItem={renderMessage}
-        contentContainerStyle={styles.messagesList}
-      />
+      <ScrollView style={styles.chatContainer}>
+        {chatHistory.map((msg, index) => (
+          <View key={index} style={msg.role === 'user' ? styles.userMessage : styles.botMessage}>
+            <Text style={styles.messageText}>{msg.text}</Text>
+          </View>
+        ))}
+      </ScrollView>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Tapez votre message..."
-          value={inputText}
-          onChangeText={(text) => setInputText(text)}
+          placeholder="Entrez votre message"
+          value={userMessage}
+          onChangeText={setUserMessage}
         />
-        <TouchableOpacity style={styles.sendButton} onPress={handleSend}>
-          <Text style={styles.sendButtonText}>Envoyer</Text>
-        </TouchableOpacity>
+        <IconButton
+          icon="send"
+          size={24}
+          onPress={handleSendMessage}
+          disabled={loading}
+        />
       </View>
     </View>
   );
@@ -61,53 +81,42 @@ const ChatScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    paddingTop: 50,
+    backgroundColor: '#fff',
   },
-  messagesList: {
-    padding: 10,
-  },
-  messageContainer: {
-    maxWidth: '80%',
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 10,
+  chatContainer: {
+    flex: 1,
+    paddingHorizontal: 10,
   },
   userMessage: {
     alignSelf: 'flex-end',
-    backgroundColor: '#0084ff',
+    backgroundColor: '#dcf8c6',
+    padding: 10,
+    marginVertical: 5,
+    borderRadius: 10,
   },
   botMessage: {
     alignSelf: 'flex-start',
-    backgroundColor: '#e5e5ea',
+    backgroundColor: '#f1f0f0',
+    padding: 10,
+    marginVertical: 5,
+    borderRadius: 10,
   },
   messageText: {
-    color: '#fff',
+    fontSize: 16,
   },
   inputContainer: {
     flexDirection: 'row',
     padding: 10,
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderColor: '#ddd',
+    alignItems: 'center',
   },
   input: {
     flex: 1,
-    padding: 10,
     borderWidth: 1,
     borderColor: '#ddd',
+    padding: 10,
     borderRadius: 20,
-    marginRight: 10,
-  },
-  sendButton: {
-    backgroundColor: '#0084ff',
-    borderRadius: 20,
-    paddingHorizontal: 15,
-    justifyContent: 'center',
-  },
-  sendButtonText: {
-    color: '#fff',
-    fontWeight: 'bold',
   },
 });
 
-export default ChatScreen;
+export default ChatbotScreen;
