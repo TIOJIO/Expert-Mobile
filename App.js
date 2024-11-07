@@ -10,6 +10,8 @@ import HomeScreen from './Screems/HomeScreem';
 import ViewScreen from './Screems/ViewScreem';
 import AccountScreen from './Screems/AccountScreem';
 import DetailScreen from './Screems/DetailScreem';
+import Home_car from './Screems/groupe_car/Home_car';
+import Detail_car from './Screems/groupe_car/Detail_car';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -23,8 +25,8 @@ function HomeTabs() {
 
           if (route.name === 'Home') {
             iconName = 'home';
-          } else if (route.name === 'View') {
-            iconName = 'visibility';
+          } else if (route.name === 'ChatBot') {
+            iconName = 'message';
           } else if (route.name === 'Account') {
             iconName = 'account-circle';
           }
@@ -60,7 +62,8 @@ export default function App() {
        
           <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Details" component={DetailScreen}  />
+          <Stack.Screen name="Home_car" component={Home_car} options={{ headerShown: false }}/>
+          <Stack.Screen name="Details" component={Detail_car}  />
       
       </Stack.Navigator>
     </NavigationContainer>

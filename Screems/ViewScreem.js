@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 
 const ChatScreen = () => {
+
+  const PALM_API_KEY='AIzaSyA7zZ2RJfWIQ0IMc21hfpCIRfmY6Rv3iBg'
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
 

@@ -3,78 +3,42 @@ import { View, StyleSheet, TextInput, Text, Image, FlatList } from 'react-native
 import CustumHeader from './CustumHeader';
 import { Button, Card, Avatar, IconButton , Icon } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import {Datas} from '../Constant/group_data'
+import { Badge } from 'react-native-paper';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const data = [
-    {
-      id: 1,
-      name: 'Ferarie',
-      description: 'A delicious red fruit A delicious red fruit A delicious red fruit A delicious red fruit A delicious red fruit.',
-      image: require('../images/v1.png'), // Utilisez require pour une image locale
-    },
-    {
-      id: 2,
-      name: 'Mustande',
-      description: 'A yellow tropical fruit A yellow tropical fruitA yellow tropical fruitA yellow tropical fruitA yellow tropical fruit.',
-      image: require('../images/v2.png'),
-    },
-    {
-      id: 3,
-      name: 'Tesla',
-      description: 'A citrus fruit rich in vitamin C A citrus fruit rich in vitamin CA citrus fruit rich in vitamin CA citrus fruit rich in vitamin C.',
-      image: require('../images/v3.png'),
-    },
-    {
-      id: 4,
-      name: 'Porche',
-      description: 'A citrus fruit rich in vitamin C A citrus fruit rich in vitamin CA citrus fruit rich in vitamin C.',
-      image: require('../images/v4.png'),
-    },
-    {
-      id: 5,
-      name: 'Luxure',
-      description: 'A citrus fruit rich in vitamin C.',
-      image: require('../images/v5.png'),
-    },
-    // Ajoutez d'autres éléments si besoin
-  ];
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(data);
+  const [filteredData, setFilteredData] = useState(Datas);
+
 
   const handleSearch = (text) => {
     setSearchQuery(text);
     if (text) {
-      const newData = data.filter((item) => 
-        item.name.toLowerCase().includes(text.toLowerCase())
+      const newData = Datas.filter((item) => 
+         item.name.toLowerCase().includes(text.toLowerCase())
       );
       setFilteredData(newData);
     } else {
-      setFilteredData(data);
+      setFilteredData(Datas);
     }
   };
 
   const renderItem = ({ item }) => (
-    <Card style={styles.card} onPress={() => navigation.navigate('Details', { item })}>
+    <Card style={styles.card} onPress={() => navigation.navigate('Home_car', { item })}>
       <Card.Title
         title={item.name}
-        subtitle={item.description}
-        left={(props) => <Avatar.Icon {...props} icon="folder" />}
-        right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
+        subtitle={item.badge==0? ' Pas de nouvelle publication':'+ de '+item.badge+' nouvelles publication'}
+        left={(props) =><Avatar.Image size={50}  source={item.image}></Avatar.Image>}
+        right={(props) => item.badge==0?'':<Badge style={{marginRight:15}} >{item.badge}</Badge>}
       />
-      <Image source={item.image} style={styles.cardImage} />
-      <Card.Actions>
-        <Button style={{width:80,height:40}}> <Icon source="message"size={20}/></Button>
-        <Button style={{width:80,height:40}}> <Icon source="share"size={20}/></Button>
-      </Card.Actions>
     </Card>
   );
 
   return ( 
-    <View style={styles.container}>
-      <CustumHeader />
-      
+    <View >
+      <CustumHeader head={true}/>
       <View style={styles.search}>
         <TextInput
           style={styles.searchInput}
@@ -82,17 +46,11 @@ const HomeScreen = () => {
           value={searchQuery}
           onChangeText={(text) => handleSearch(text)}
         />
-        <View style={styles.searchButton}>
-          <Button 
-            style={{backgroundColor:'#003366'}} 
-            icon="magnify" 
-            mode="contained" 
-            onPress={() => handleSearch(searchQuery)}
-          />
-        </View>
-      </View>
 
-      <Text style={styles.title}>News Feed</Text>
+      </View>
+      <View style={styles.container}>
+
+      <Text style={styles.title}>Group List</Text>
 
       <FlatList
         data={filteredData}
@@ -100,6 +58,7 @@ const HomeScreen = () => {
         //keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
+      </View>
     </View>
   );
 };
@@ -110,15 +69,14 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   search: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     backgroundColor: 'white',
+    width: '100%',
+    alignItems:'center'
   },
   searchInput: {
     height: 40,
-    marginLeft: 10,
-    width: '70%',
+
+    width: '90%',
     borderColor: '#ddd',
     borderWidth: 1,
     borderRadius: 15,
@@ -126,9 +84,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: '#fff',
   },
-  searchButton: {
-    marginRight: 10,
-  },
+
   title: {
     fontWeight: 'bold',
     padding: 10,

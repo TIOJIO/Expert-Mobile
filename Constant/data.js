@@ -1,0 +1,55 @@
+import { Badge } from 'react-native-paper';
+
+export const Datas = [
+  {
+    id: 1,
+    name: 'Thomas',
+    description: 'Ferrari rouge sportive, puissante et rapide. Véhicule de luxe pour amateurs de sensations fortes et de vitesse.',
+    image: require('../images/v1.png'),
+    userprofil: require('../images/user1.png'),
+    car_name: 'Ferrari',
+    prise: 2000,
+    caractéristique: 'Design aérodynamique, Moteur haute performance, Matériaux légers, Freins en carbone-céramique',
+  },
+  {
+    id: 2,
+    name: 'Roberto Carlos',
+    description: 'Mustang légendaire, alliant puissance et style. Emblématique de la culture américaine, symbole de liberté et de vitesse.',
+    image: require('../images/v2.png'),
+    userprofil: require('../images/user2.png'),
+    car_name: 'Mustang',
+    prise: 1800,
+    caractéristique: 'V8 performant, Suspension robuste, Carrosserie musclée, Intérieur luxueux',
+  },
+  {
+    id: 3,
+    name: 'Lucas',
+    description: 'Tesla, électrique innovant et écologique. Allie technologie avancée, autonomie prolongée, accélération instantanée et sécurité optimale.',
+    image: require('../images/v3.png'),
+    userprofil: require('../images/user3.png'),
+    car_name: 'Tesla',
+    prise: 2500,
+    caractéristique: 'Autopilot intelligent, Batterie longue durée, Intérieur minimaliste, Écran tactile central',
+  },
+  {
+    id: 4,
+    name: 'Flobert',
+    description: 'Porsche, synonyme de luxe et performances. Voiture raffinée, idéale pour conduite sportive et confort sur route.',
+    image: require('../images/v4.png'),
+    userprofil: require('../images/user4.png'),
+    car_name: 'Porsche',
+    prise: 3000,
+    caractéristique: 'Moteur turbo, Conduite agile, Freins de haute qualité, Intérieur personnalisé',
+  },
+  {
+    id: 5,
+    name: 'Capitain Tom',
+    description: 'Lamborghini iconique, rapide et puissante. Conçu pour les amateurs de luxe et de vitesse extrême sur route.',
+    image: require('../images/v5.png'),
+    userprofil: require('../images/user4.png'),
+    car_name: 'Lamborghini',
+    prise: 3500,
+    caractéristique: 'Performances extrêmes, Design agressif, Matériaux premium, Accélération fulgurante',
+  },
+  // Ajoutez d'autres éléments si besoin
+];
