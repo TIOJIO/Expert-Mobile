@@ -117,7 +117,7 @@
     "title": "The Rise of K-Pop",
     "description": "How K-Pop became a global phenomenon. Category: Entertainment, Keywords: Music, Entertainment, K-Pop.",
     "keywords": ["Music", "Entertainment", "K-Pop"],
-    "image": "https://example.com/kpop-image.jpg"
+    "image": ["https://images.unsplash.com/photo-1470225620780-dba8ba36b745?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D","https://hips.hearstapps.com/hmg-prod/images/lead-iamge-kpop-15-01-3-1639494305.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*"]
   },
   {
     "id": 16,
@@ -125,7 +125,7 @@
     "title": "Introduction to Machine Learning",
     "description": "The basics of ML and its use cases. Category: Technology, Keywords: Machine Learning, Technology, AI.",
     "keywords": ["Machine Learning", "Technology", "AI"],
-    "image": "https://example.com/machine-learning-image.jpg"
+    "image": ["https://d3caycb064h6u1.cloudfront.net/wp-content/uploads/2021/06/Machine_Learning.jpg","https://d3an9kf42ylj3p.cloudfront.net/uploads/2023/05/pg_machinelearning101_may23.jpg"]
   },
   {
     "id": 17,
@@ -133,7 +133,7 @@
     "title": "Mental Health Awareness",
     "description": "Recognizing and addressing mental health issues. Category: Health, Keywords: Mental Health, Awareness, Support.",
     "keywords": ["Mental Health", "Awareness", "Support"],
-    "image": "https://example.com/mental-health-image.jpg"
+    "image": ["https://domf5oio6qrcr.cloudfront.net/medialibrary/14528/3f85b1b1-9dc7-4a90-855c-dc204646e889.jpg","https://vinciworks.com/wp-content/uploads/2024/05/800x-40-1.webp"]
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "title": "The Solar System",
     "description": "An exploration of planets and celestial bodies. Category: Science, Keywords: Astronomy, Planets, Science.",
     "keywords": ["Astronomy", "Planets", "Science"],
-    "image": "https://example.com/solar-system-image.jpg"
+    "image": ["https://plus.unsplash.com/premium_photo-1717563132740-6903bac2cf85?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmV0YXN8ZW58MHx8MHx8fDA%3D","https://images.pexels.com/photos/2034892/pexels-photo-2034892.jpeg?cs=srgb&dl=pexels-lucaspezeta-2034892.jpg&fm=jpg"]
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "title": "The Renaissance Era",
     "description": "A period of cultural rebirth in Europe. Category: History, Keywords: History, Renaissance, Art.",
     "keywords": ["History", "Renaissance", "Art"],
-    "image": "https://example.com/renaissance-era-image.jpg"
+    "image": ["https://useumstorage.blob.core.windows.net/drupal-public/content-images/Written-Content/Curated-exhibitions/Renaissance/entrega_de_las_llaves_a_san_pedro_perugino.jpg","https://img.freepik.com/free-photo/view-ancient-greek-goddess-bust_23-2151615560.jpg"]
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "title": "The Evolution of Video Games",
     "description": "Tracing the development of video games from the 1970s to now. Category: Entertainment, Keywords: Video Games, Entertainment, Technology.",
     "keywords": ["Video Games", "Entertainment", "Technology"],
-    "image": "https://example.com/video-games-image.jpg"
+    "image": ["https://media.istockphoto.com/id/1334436084/photo/top-down-view-of-colorful-illuminated-gaming-accessories-laying-on-table.jpg?s=612x612&w=0&k=20&c=E9xnbAZoBS5LlUX0q-zxT_3m6gEZpyB2k51_U4LLMNs=","https://static.wixstatic.com/media/980167_e0d3661c71d14168a692060f417977a5~mv2.jpg/v1/fill/w_640,h_450,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/980167_e0d3661c71d14168a692060f417977a5~mv2.jpg"]
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "title": "Entrepreneurship in the Digital Age",
     "description": "How technology is shaping modern businesses. Category: Business, Keywords: Business, Entrepreneurship, Technology.",
     "keywords": ["Business", "Entrepreneurship", "Technology"],
-    "image": "https://example.com/entrepreneurship-image.jpg"
+    "image": ["https://cloudinary.hbs.edu/hbsit/image/upload/s--EmT0lNtW--/f_auto,c_fill,h_375,w_750,/v20200101/6978C1C20B650473DD135E5352D37D55.jpg","https://www.econlib.org/wp-content/uploads/2020/07/entrepreneurship2.jpg"]
   },
   {
     "id": 22,
@@ -173,7 +173,7 @@
     "title": "Online Learning Platforms",
     "description": "A guide to e-learning and its benefits. Category: Education, Keywords: Education, Online Learning, E-Learning.",
     "keywords": ["Education", "Online Learning", "E-Learning"],
-    "image": "https://example.com/online-learning-image.jpg"
+    "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFofUY4iXhmnU1FFIcSZSA9T5M8nKkKWRyzQ&s","https://myscol.com/wp-content/uploads/2023/07/apprentissage-idees-education-insight-intelligence-study-concept-768x384.jpg"]
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "title": "Peugeot 208",
     "description": "Petite citadine polyvalente, idéale pour la ville avec une consommation faible. Category: Voiture, Keywords: Voiture, Peugeot, Citadine.",
     "keywords": ["Voiture", "Peugeot", "Citadine"],
-    "image": "require('../images/v5.png')"
+    "image": ["https://lh5.googleusercontent.com/proxy/304fvU9iyeoNNlHwT624QahnWEzQqREurVoKYr82PktDhcTIQAStRapfQM8O7Ei6a17TrTET1T5_JW8zw8LfR4dnH046xpxFtrFBYt_akMfGwHRqP4Fq1GPJ9TYR","https://www.auto-ici.fr/uploads/file/blog/image_a_la_une/image-a-la-une-peugeot-208-850x400-61e7e12222317-66ab46087067c.webp?v=30.06.2021"]
   },
 
   {
@@ -190,7 +190,7 @@
     "title": "Renault Clio",
     "description": "Une des voitures les plus vendues en France, fiable et économique. Catégorie : Voiture, Mots-clés : Renault, Clio.",
     "keywords": ["Voiture", "Renault", "Clio"],
-    "image": "require('../images/v4.png')"
+    "image": ["https://media.renault.com/wp-content/uploads/2024/01/ddf2c7696f2f63b149fb96ba42561271-l.jpg.webp","https://images.caradisiac.com/logos/3/6/8/4/253684/S8-renault-devoile-sa-citadine-electrique-low-cost-city-k-ze-175730.jpg"]
   },
   {
     "id": 25,
@@ -198,7 +198,7 @@
     "title": "Mercedes-Benz Classe A",
     "description": "Compacte haut de gamme, associant confort et technologies avancées. Catégorie : Voiture, Mots-clés : Mercedes, Classe A.",
     "keywords": ["Voiture", "Mercedes", "Classe A"],
-    "image": "require('../images/v3.png')"
+    "image": ["https://www.trajetalacarte.com/blog/wp-content/uploads/2023/10/Mercedes-concept-car-SUV-trajetaalacarte.com_.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3TiLm8u0fMQ09pfngTKtpoOMoKQApMWU5Tw&s"]
   },
   {
     "id": 26,
@@ -206,7 +206,7 @@
     "title": "BMW Série 3",
     "description": "Voiture sportive et élégante, symbole de performance et confort. Catégorie : Voiture, Mots-clés : BMW, Série 3.",
     "keywords": ["Voiture", "BMW", "Série 3"],
-    "image": "require('../images/v2.png')"
+    "image": ["https://mediapool.bmwgroup.com/cache/P9/202309/P90522951/P90522951-the-bmw-i5-edrive40-driving-10-2023-2247px.jpg","https://www.bmw.fr/content/dam/bmw/common/all-models/3-series/series-overview/bmw-3er-overview-page-ms-06.jpg"]
   },
   {
     "id": 27,
@@ -214,7 +214,7 @@
     "title": "Audi A3",
     "description": "Compacte premium offrant un équilibre entre confort, performances et technologie. Catégorie : Voiture, Mots-clés : Audi, A3.",
     "keywords": ["Voiture", "Audi", "A3"],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/2019_Audi_A3_2.0_TDI_2.jpg"
+    "image": ["https://cdn.drivek.com/configurator-imgs/cars/fr/800/AUDI/RS6/42778_WAGON-5-DOORS/audi-rs6-avant-front-view.jpg","https://glide.netfpn.net/publicar/medias/import_3563/20240222/41d2/133851_2.jpg?fit=crop&crop=center&w=1200&fm=jpg"]
   },
   {
     "id": 28,
@@ -222,7 +222,7 @@
     "title": "Smartphones 5G",
     "description": "Les smartphones 5G permettent des vitesses de téléchargement ultra-rapides. Catégorie : Technologie, Mots-clés : Smartphone, 5G.",
     "keywords": ["Technologie", "Smartphone", "5G"],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/5G_Smartphone.jpg"
+    "image": ["https://www.apple.com/v/iphone/home/bw/images/meta/iphone__kqge21l9n26q_og.png","https://images.rtl.fr/~c/770v513/rtl/www/1375497-xiaomi-brade-le-ticket-d-entree-pour-la-5g.png"]
   },
   {
     "id": 29,
@@ -230,7 +230,7 @@
     "title": "La réalité augmentée",
     "description": "La réalité augmentée fusionne le monde réel et des éléments numériques interactifs. Catégorie : Technologie, Mots-clés : Réalité augmentée, Innovation.",
     "keywords": ["Technologie", "Réalité augmentée", "Innovation"],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Augmented_reality_example.jpg"
+    "image": ["https://www.dynamique-mag.com/wp-content/uploads/realite-augmentee-et-la-realite-virtuelle.jpg","https://www.dynamique-mag.com/wp-content/uploads/realite-augmentee-et-la-realite-virtuelle.jpg"]
   },
   {
     "id": 30,
