@@ -23,7 +23,7 @@ export const Datas = [
   },
   {
     id: 3,
-    name: 'Lucas',
+    name: 'luc',
     description: 'Tesla, électrique innovant et écologique. Allie technologie avancée, autonomie prolongée, accélération instantanée et sécurité optimale.',
     image: require('../images/v3.png'),
     userprofil: require('../images/user3.png'),

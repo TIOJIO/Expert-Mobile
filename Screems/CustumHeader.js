@@ -8,7 +8,7 @@ const TypingAnimation = () => {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const typingSpeed = 100; // Vitesse de saisie en millisecondes
-  const textToType = 'Welcom back'; // Texte à afficher avec l'animation
+  const textToType = 'Votre Recherche:'; // Texte à afficher avec l'animation
 
   useEffect(() => {
     if (index < textToType.length) {
@@ -28,7 +28,7 @@ const TypingAnimation = () => {
 
 
 
-export default function CustumHeader({ head}){
+export default function CustumHeader({ head,text}){
   const navigation = useNavigation();
     const [active, setActive] = React.useState('');
     return(
@@ -36,18 +36,31 @@ export default function CustumHeader({ head}){
         {
             head==true?
         
+          <View style={{backgroundColor:'white',width:'100%'}}>
           <View style={{height:100,marginTop:0,flexDirection:'row',justifyContent:'space-between',backgroundColor:'white',borderBottomLeftRadius:3,borderBottomRightRadius:3,width:'100%',alignItems:'center'}}>
             <View style={{marginLeft:20,marginTop:30}}>
                 <TypingAnimation/>
               </View>
-            <View style={{marginRight:20,marginTop:30}}>
+            <View style={{width: 85,marginRight:20,marginTop:30,flexDirection:'row',justifyContent:'space-between'}}>
+                
+            <TouchableOpacity onPress={()=>navigation.replace('SearchScreen')}>
+                <Image
+                  source={require('../images/search.png')}
+                  style={{marginLeft:0, width: 40, height: 40,borderRadius:100,borderWidth:1,borderColor:'black',textAlign:'center' }}
+                />  
+             </TouchableOpacity>
 
+                <TouchableOpacity>
                 <Image
                   source={require('../images/user.png')}
-                  style={{marginLeft:110, width: 40, height: 40,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
-                />   
+                  style={{marginLeft:0, width: 40, height: 40,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
+                />  
+                </TouchableOpacity>
             </View>
             
+            
+        </View>
+            <Text style={{marginLeft:20,marginBottom:8}}>'{text}'</Text>
         </View>
          :
          <View style={{height:100,marginTop:0,flexDirection:'row',justifyContent:'space-between',backgroundColor:'white',borderBottomLeftRadius:3,borderBottomRightRadius:3,width:'100%',alignItems:'center'}}>
@@ -62,7 +75,9 @@ export default function CustumHeader({ head}){
             
             
         </View>
+        
      }
+     
   </View>
       
     )

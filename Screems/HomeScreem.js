@@ -1,63 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, TextInput, Text, Image, FlatList } from 'react-native';
 import CustumHeader from './CustumHeader';
 import { Button, Card, Avatar, IconButton , Icon } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import {Datas} from '../Constant/group_data'
 import { Badge } from 'react-native-paper';
-
-const HomeScreen = () => {
-  const navigation = useNavigation();
-
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredData, setFilteredData] = useState(Datas);
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-  const handleSearch = (text) => {
-    setSearchQuery(text);
-    if (text) {
-      const newData = Datas.filter((item) => 
-         item.name.toLowerCase().includes(text.toLowerCase())
+const HomeScreen = ({ route }) => {
+  const [storedValue, setStoredValue] = useState('');
+  const [searchQuery, setSearchQuery] = useState(storedValue);
+  const [filteredData, setFilteredData] = useState([]);
+
+  const getFromLocalStorage = async () => {
+    try {
+      const value = await AsyncStorage.getItem('seartext');
+      
+        setStoredValue(value);
+        if (value.length !== 0) {
+
+          const response = require('../Constant/datas.json'); // Charge les données locales
+      const newData = response.filter(item =>
+        item.description.toLowerCase().includes(value.toLowerCase())
       );
-      setFilteredData(newData);
-    } else {
-      setFilteredData(Datas);
+          setFilteredData(newData);   
+          console.log('mot', value);
+         
+        
+      } else {
+        setStoredValue('Aucune valeur entrée');
+      }
+    } catch (e) {
+      console.error('Erreur lors de la récupération :', e);
     }
   };
 
+  useEffect(() => {
+    getFromLocalStorage();
+  }, []);
+  const navigation = useNavigation();
+  
+
+
   const renderItem = ({ item }) => (
-    <Card style={styles.card} onPress={() => navigation.navigate('Home_car', { item })}>
+    <Card style={styles.card} onPress={() => navigation.navigate('Details', { item })}>
       <Card.Title
-        title={item.name}
-        subtitle={item.badge==0? ' Pas de nouvelle publication':'+ de '+item.badge+' nouvelles publication'}
-        left={(props) =><Avatar.Image size={50}  source={item.image}></Avatar.Image>}
-        right={(props) => item.badge==0?'':<Badge style={{marginRight:15}} >{item.badge}</Badge>}
+        title={item.category}
+        subtitle={item.title}
+        left={(props) =><Avatar.Image size={50}  source={{uri:item.image}}></Avatar.Image>}
       />
     </Card>
   );
 
   return ( 
     <View >
-      <CustumHeader head={true}/>
-      <View style={styles.search}>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Search..."
-          value={searchQuery}
-          onChangeText={(text) => handleSearch(text)}
-        />
-
-      </View>
+      <CustumHeader head={true} text={storedValue}/>
+      
       <View style={styles.container}>
 
-      <Text style={styles.title}>Group List</Text>
+      <Text style={styles.title}>Resultats </Text>
 
-      <FlatList
+      {
+        filteredData.length!=0?
+        <FlatList
         data={filteredData}
         keyExtractor={(item, index) => `${item.id}-${index}`}
         //keyExtractor={(item) => item.id}
         renderItem={renderItem}
-      />
+      />:
+      <Text> Aucun resultat trouvé</Text>
+      }
+
+      
       </View>
     </View>
   );

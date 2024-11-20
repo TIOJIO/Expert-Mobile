@@ -45,22 +45,25 @@ const DetailScreen = ({ route }) => {
         
         <View style={{height:'auto',flexDirection:'row',justifyContent:'space-between',backgroundColor:'white',borderBottomLeftRadius:3,borderBottomRightRadius:3,width:'100%',alignItems:'center'}}>
             <View style={{marginLeft:20,marginTop:30, fontWeight: 'bold',}}>
-                <Text  style={styles.title}>{item.car_name}</Text>
+                <Text  style={styles.title}>{item.category}</Text>
               </View>
             <View style={{marginRight:20,marginTop:30}}>
-              <Text  style={styles.title}>{item.prise} $</Text> 
+              <Text  style={styles.title}> </Text> 
             </View>
             
         </View>
       
-      {/* Appliquez le style animé à l'image */}
-      <Animated.Image source={item.image} style={[styles.image, animatedStyle]} />
+      {
+       // item.image?<Animated.Image source={item.image} style={[styles.image, animatedStyle]} />:''
+      }
       
+      <Text  style={styles.title}>{item.title} </Text> 
+
       <Text  style={styles.title}>Description</Text> 
       <Text style={styles.description}>{item.description}</Text>
 
       <Text  style={styles.title}>caractéristiques</Text> 
-      <Text style={styles.description}>{item.caractéristique}</Text>
+      {item.keywords.map(item=><Text style={{marginLeft:10,marginBottom:20}}> - {item} </Text>)}
 
 
 
