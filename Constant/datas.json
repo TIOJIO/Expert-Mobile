@@ -37,7 +37,7 @@
     "title": "Top 10 Movies of 2023",
     "description": "A curated list of the most popular movies of 2023. Category: Entertainment, Keywords: Movies, Entertainment, 2023.",
     "keywords": ["Movies", "Entertainment", "2023"],
-    "image": "https://example.com/movies-image.jpg"
+    "image": ["https://media.istockphoto.com/id/911590226/vector/movie-time-vector-illustration-cinema-poster-concept-on-red-round-background-composition-with.jpg?s=612x612&w=0&k=20&c=QMpr4AHrBgHuOCnv2N6mPUQEOr5Mo8lE7TyWaZ4r9oo=","https://mediakwest.com/wp-content/uploads/2019/07/1_Beaugrenelle.ONYX-c-Fr%C3%A9d%C3%A9ric-Berthet.HD_.006.jpg"]
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "title": "Understanding Artificial Intelligence",
     "description": "An overview of AI and its applications in various fields. Category: Technology, Keywords: AI, Technology, Innovation.",
     "keywords": ["AI", "Technology", "Innovation"],
-    "image": "https://example.com/ai-image.jpg"
+    "image": ["https://www.governanceinstitute.com.au/app/uploads/2024/08/AI-Webpage.png","https://t4.ftcdn.net/jpg/02/42/94/05/360_F_242940510_FxVXYUrB36u3YBbWsWFtbX4DyRymFOqL.jpg"]
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "title": "Healthy Eating Habits",
     "description": "Tips for maintaining a balanced diet for a healthy lifestyle. Category: Health, Keywords: Health, Nutrition, Diet.",
     "keywords": ["Health", "Nutrition", "Diet"],
-    "image": "https://example.com/healthy-eating-image.jpg"
+    "image": ["https://images.prismic.io/giphar/be285664-de54-45a1-a903-84fb69e45591_nutrition_vignette_s.jpg?auto=compress,format&rect=0,7,860,586&w=880&h=600","https://images.everydayhealth.com/images/is-the-dash-diet-right-for-you-722x406.jpg?sfvrsn=d73cbdf8_0"]
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "title": "The Theory of Relativity",
     "description": "Einstein's groundbreaking theory that transformed physics. Category: Science, Keywords: Relativity, Einstein, Physics.",
     "keywords": ["Relativity", "Einstein", "Physics"],
-    "image": "https://example.com/relativity-image.jpg"
+    "image": ["https://cdn.mos.cms.futurecdn.net/oiX6DtaAcgA3VbfZguy5BV.jpg","https://www.slate.fr/uploads/store/story_205553/medium_landscape_205553.jpg"]
   },
   {
     "id": 9,
