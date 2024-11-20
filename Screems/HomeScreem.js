@@ -48,7 +48,7 @@ const HomeScreen = ({ route }) => {
       <Card.Title
         title={item.category}
         subtitle={item.title}
-        left={(props) =><Avatar.Image size={50}  source={{uri:item.image}}></Avatar.Image>}
+        left={(props) =><Avatar.Image size={50}  source={{uri:item.image[0]}}></Avatar.Image>}
       />
     </Card>
   );

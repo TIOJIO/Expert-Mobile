@@ -54,7 +54,7 @@ const DetailScreen = ({ route }) => {
         </View>
       
       {
-       // item.image?<Animated.Image source={item.image} style={[styles.image, animatedStyle]} />:''
+        item.image.map(img=><Animated.Image source={{uri:img}} style={[styles.image, animatedStyle]} />)
       }
       
       <Text  style={styles.title}>{item.title} </Text> 
