@@ -69,7 +69,7 @@
     "title": "World War II Overview",
     "description": "A summary of the events and consequences of the Second World War. Category: History, Keywords: WWII, History, Global Conflict.",
     "keywords": ["WWII", "History", "Global Conflict"],
-    "image": "https://example.com/ww2-image.jpg"
+    "image": ["https://www.reallyfrench.com/images/french-soilders-world-war-2.jpg.webp","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR47aN9a1MwEZC8PFucx6GJPxA0kh7UvWs0w&s"]
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "title": "Top Streaming Platforms in 2023",
     "description": "A guide to the best streaming services available. Category: Entertainment, Keywords: Streaming, Entertainment, Platforms.",
     "keywords": ["Streaming", "Entertainment", "Platforms"],
-    "image": "https://example.com/streaming-image.jpg"
+    "image": ["https://www.planetecsat.com/wp-content/uploads/2024/02/Lancement-MAX-1080x675.png","https://images.bfmtv.com/XL20053yxmB3owBXiR42cNCrUMM=/8x4:2040x1147/2032x0/images/Quelle-est-la-meilleure-plateforme-de-streaming-en-France-Comparatif-SVOD-1509438.jpg"]
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "title": "Blockchain Basics",
     "description": "How blockchain technology is revolutionizing industries. Category: Technology, Keywords: Blockchain, Cryptocurrency, Technology.",
     "keywords": ["Blockchain", "Cryptocurrency", "Technology"],
-    "image": "https://example.com/blockchain-image.jpg"
+    "image": ["https://blogs.iadb.org/caribbean-dev-trends/wp-content/uploads/sites/34/2017/12/Blockchain1.jpg","https://www.centralbank.net/globalassets/images/articles/crypto-par-2.png?v=1D896BD3A634800"]
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "title": "The Importance of Sleep",
     "description": "How quality sleep affects mental and physical health. Category: Health, Keywords: Health, Sleep, Wellness.",
     "keywords": ["Health", "Sleep", "Wellness"],
-    "image": "https://example.com/sleep-image.jpg"
+    "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQylneG4qHqKXyKeQTwJNu3U1kI-eBAyIPKVQ&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3KBxa7hL1mokPmQ0SlcrIsmTXwMD6Qfix7Q&s"]
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "title": "Climate Change Impacts",
     "description": "Understanding the effects of global warming. Category: Science, Keywords: Climate Change, Environment, Science.",
     "keywords": ["Climate Change", "Environment", "Science"],
-    "image": "https://example.com/climate-change-image.jpg"
+    "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwzcIacRU5pyXX8JtYMYqj-wxUgkfxJYrJ9w&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXW8woSIFm-dYIdkMKTSkkoLoEtsc-buffzA&s"]
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "title": "Ancient Egyptian Civilization",
     "description": "Exploring the culture and achievements of ancient Egypt. Category: History, Keywords: History, Egypt, Civilization.",
     "keywords": ["History", "Egypt", "Civilization"],
-    "image": "https://example.com/egyptian-civilization-image.jpg"
+    "image": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY8UCRpPYpQhgJOzryrjC3cjsFuy8k-_I6gg&s","https://cdn.britannica.com/88/124388-004-686BFFFF.jpg"]
   },
   {
     "id": 15,
