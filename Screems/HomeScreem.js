@@ -15,12 +15,17 @@ const HomeScreen = () => {
 
   const handleSearch = (text) => {
     setSearchQuery(text);
-    if (text) {
+    if (text.trim()) {
       const newData = Datas.filter((item) => 
          item.name.toLowerCase().includes(text.toLowerCase())
       );
+      if (newData.length === 0) {
+        // Si aucun résultat n'est trouvé, afficher un message
+        alert('Aucune donnée trouvée.');
+      }
       setFilteredData(newData);
     } else {
+      alert("le champs de recherche est requis.")
       setFilteredData(Datas);
     }
   };
