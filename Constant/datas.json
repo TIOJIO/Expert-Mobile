@@ -13,7 +13,7 @@
     "title": "Benefits of Regular Exercise",
     "description": "Exercise improves overall health and reduces the risk of chronic diseases. Category: Health, Keywords: Exercise, Health, Wellness.",
     "keywords": ["Exercise", "Health", "Wellness"],
-    "image": "https://example.com/exercise-image.jpg"
+    "image": ["https://www.okbima.com/assets/uploads/blog/6f8355b06f32d3fdc75877579f5b1a1f.webp","https://health-e.in/wp-content/uploads/2023/12/healthcare-concept-with-futuristic-design-graphics-medical-treatment-icons.webp"]
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "title": "Black Holes Explained",
     "description": "A black hole is a region of spacetime where gravity is so strong that nothing can escape from it. Category: Science, Keywords: Black Holes, Physics, Astronomy.",
     "keywords": ["Black Holes", "Physics", "Astronomy"],
-    "image": "https://example.com/black-hole-image.jpg"
+    "image": ["https://www.okbima.com/assets/uploads/blog/6f8355b06f32d3fdc75877579f5b1a1f.webp","https://health-e.in/wp-content/uploads/2023/12/healthcare-concept-with-futuristic-design-graphics-medical-treatment-icons.webp"]
   },
   {
     "id": 4,
