@@ -60,7 +60,7 @@ export default function CustumHeader({ head,text}){
             
             
         </View>
-            <Text style={{marginLeft:20,marginBottom:8}}>'{text}'</Text>
+            <Text style={{marginLeft:20,marginBottom:8,fontWeight:'bold'}}>" {text} "</Text>
         </View>
          :
          <View style={{height:100,marginTop:0,flexDirection:'row',justifyContent:'space-between',backgroundColor:'white',borderBottomLeftRadius:3,borderBottomRightRadius:3,width:'100%',alignItems:'center'}}>
