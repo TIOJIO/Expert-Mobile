@@ -5,7 +5,7 @@ RESUME : Il s'agit de l'application mobile du système expert qui aura pour prin
 
 ###########      FONCTIONNALITES    #############
 
-1) Effectuer une rêquete sur l'application
+1) Effectuer une rêquete sur l'application.
 
 2) Faire une recherche à partir d'un groupe basé sur un thème précis
 
