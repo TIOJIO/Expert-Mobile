@@ -12,6 +12,7 @@ import AccountScreen from './Screems/AccountScreem';
 import DetailScreen from './Screems/DetailScreem';
 import Home_car from './Screems/groupe_car/Home_car';
 import Detail_car from './Screems/groupe_car/Detail_car';
+import SearchScreen from './Screems/SearchHome';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -59,7 +60,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-       
+          <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Home_car" component={Home_car} options={{ headerShown: false }}/>
