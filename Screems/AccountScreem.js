@@ -15,7 +15,7 @@ const AccountScreen = ({ navigation }) => {
     <View>
           <CustumHeader/>
       <View style={styles.container}>
-        <Text>Account Screen</Text>
+        <Text>Account Screens</Text>
         <Button title="Logout" onPress={handleLogout} />
       </View>
     </View>
