@@ -26,8 +26,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "8808a030-1e0d-4a52-b640-1837bd25240a"
+        "projectId": "671c3c40-a38c-4f85-a1b2-b30a911d0204"
       }
-    }
+    },
+    "owner": "babas"
   }
 }
