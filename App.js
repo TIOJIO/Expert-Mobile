@@ -50,7 +50,7 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const checkLoginStatus = async () => {
+      const checkLoginStatus = async () => {
       const token = await AsyncStorage.getItem('userToken');
       setIsLoggedIn(!!token);
     };
