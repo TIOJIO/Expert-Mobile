@@ -23,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
             source={require('../images/devte.png')}
             style={{marginLeft:110, width: 110, height: 110,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
         />
-        <Text style={{textAlign:'center',fontWeight:'bold',padding:15}}>Login User</Text>
+        <Text style={{textAlign:'center',fontWeight:'bold',padding:15}}>Login Page</Text>
 
       <TextInput 
         style={styles.input} 
