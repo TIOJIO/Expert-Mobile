@@ -353,10 +353,10 @@ const ChatbotScreen = () => {
     );
     if (found.length > 0) {
       return found.map(item => (
-        `Titre: ${item.title}\nDescription: ${item.description}\n\n`
+        `Titre: ${item.title}\n Description: ${item.description}\n\n`
       )).join('\n');
     }
-    return "Je n'ai pas trouvé de réponse pour cette question.";
+     return "Je n'ai pas trouvé de réponse pour cette question.";
   };
 
   const handleSendMessage = () => {
@@ -399,7 +399,7 @@ const ChatbotScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Posez votre question"
+          placeholder="Posez votre question !"
           value={userMessage}
           onChangeText={setUserMessage}
           onSubmitEditing={handleSendMessage}
