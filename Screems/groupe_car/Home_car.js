@@ -94,7 +94,7 @@ const HomeScreen = () => {
                     }}
                 />
                 </Text>
-                <Text variant="bodyMedium">commentaires<Checkbox
+                <Text variant="bodyMedium">commentaires des utilisateurs<Checkbox
                     status={checked ? 'checked' : 'unchecked'}
                     onPress={() => {
                         setChecked(!checked);
