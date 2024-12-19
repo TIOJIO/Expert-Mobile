@@ -24,7 +24,9 @@ const LoginScreen = () => {
       if (user) {
         const parsedUser = JSON.parse(user);
         if (parsedUser.password === password) {
-           setVisible(true)
+           await AsyncStorage.setItem('SessionUser', user);
+
+            setVisible(true)
             setTimeout(() => {
                 setVisible(false)
                 navigation.replace('SearchScreen')

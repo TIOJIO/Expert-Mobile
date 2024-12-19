@@ -13,7 +13,8 @@ import DetailScreen from './Screems/DetailScreem';
 import Home_car from './Screems/groupe_car/Home_car';
 import Detail_car from './Screems/groupe_car/Detail_car';
 import SearchScreen from './Screems/SearchHome';
-import CreateScrem from './Auth/CreateScrem'
+import CreateScrem from './Auth/CreateScrem';
+import Historique from './Screems/Historique';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -67,6 +68,7 @@ export default function App() {
           <Stack.Screen name="create" component={CreateScrem} options={{ headerShown: false }} />
           <Stack.Screen name="Home_car" component={Home_car} options={{ headerShown: false }}/>
           <Stack.Screen name="Details" component={Detail_car}  />
+          <Stack.Screen name="historique" component={Historique}  />
       
       </Stack.Navigator>
     </NavigationContainer>

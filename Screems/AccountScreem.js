@@ -1,32 +1,41 @@
 // AccountScreen.js
-import React from 'react';
+import React , {useEffect,useState} from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustumHeader from './CustumHeader';
 import { Avatar, Card, IconButton } from 'react-native-paper'; 
 
 const AccountScreen = ({ navigation }) => {
+   const [sessionUser, setSessionUser] = useState(null);
+   useEffect(() => {
+    const getSessionUser = async () => {
+      try {
+        const userData = await AsyncStorage.getItem('SessionUser');
+        if (userData !== null) {
+          setSessionUser(JSON.parse(userData));
+        }
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données", error);
+      }
+    };
+    getSessionUser();
+  }, []); 
 
   const handleCreate = async () => {
-    //await AsyncStorage.removeItem('userToken');
     navigation.replace('create');
   };
 
   const handleLogin = async () => {
-    //await AsyncStorage.removeItem('userToken');
     navigation.replace('Login');
   };
 
   return (
     <View>
+      {sessionUser==null?
       <View style={styles.container}>
-        <Text style={{fontWeight:'bold',fontSize:30}}>Mon Profil</Text>
-        <Card.Title
-          title="Card Title"
-          subtitle="vous n'est pas connecter"
-          left={(props) => <Avatar.Icon {...props} icon="folder" />}
-          right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
-        />
+        <Text style={{fontWeight:'bold',fontSize:30,marginBottom: 20,}}>Mon Profil</Text>
+        <Text style={{fontWeight:'bold',fontSize:20,marginBottom: 20,}}> Vous n'êtes pas connecté </Text>
+        
         <View style={styles.bloctxt} >
            <Text style={styles.txt}> Pour profiter de toutes les fonctionnalités de notre application, créez un compte ou connectez-vous.</Text>
         </View> 
@@ -37,6 +46,23 @@ const AccountScreen = ({ navigation }) => {
         </View>
       
       </View>
+         :
+      <View style={styles.container}>
+        <Text style={{fontWeight:'bold',fontSize:30,marginBottom: 20,}}>Mon Profil</Text>
+        <Text style={{fontWeight:'bold',fontSize:20,marginBottom: 20,}}> Vous êtes connecté </Text>
+
+        <Card.Title
+          title={sessionUser.username}
+          subtitle={sessionUser.email}
+          left={(props) => <Avatar.Icon {...props} icon="user" />}
+        />
+
+      <View style={styles.buttonContainer}>
+          <Button onPress={handleCreate} style={styles.btt} title="Nouveau compte"  color="#007BFF" />&nbsp;&nbsp;&nbsp;
+          <Button onPress={handleLogin} style={styles.btt} title="Se connecter"  color="#28A745" />
+        </View>
+      </View>
+      }
     </View>
   );
 };

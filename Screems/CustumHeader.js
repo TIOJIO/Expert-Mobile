@@ -50,9 +50,9 @@ export default function CustumHeader({ head,text}){
                 />  
              </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.replace('historique')}>
                 <Image
-                  source={require('../images/user.png')}
+                  source={require('../assets/his.png')}
                   style={{marginLeft:0, width: 40, height: 40,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
                 />  
                 </TouchableOpacity>
