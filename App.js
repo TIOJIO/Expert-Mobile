@@ -13,6 +13,7 @@ import DetailScreen from './Screems/DetailScreem';
 import Home_car from './Screems/groupe_car/Home_car';
 import Detail_car from './Screems/groupe_car/Detail_car';
 import SearchScreen from './Screems/SearchHome';
+import CreateScrem from './Auth/CreateScrem'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,7 +42,7 @@ function HomeTabs() {
     >
       <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <Tab.Screen name="ChatBot" component={ViewScreen} />
-      <Tab.Screen name="Account" component={AccountScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
   );
 }
@@ -63,6 +64,7 @@ export default function App() {
           <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ headerShown: false }}/>
           <Stack.Screen name="HomeTabs" component={HomeTabs} options={{ headerShown: false }} />
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="create" component={CreateScrem} options={{ headerShown: false }} />
           <Stack.Screen name="Home_car" component={Home_car} options={{ headerShown: false }}/>
           <Stack.Screen name="Details" component={Detail_car}  />
       
