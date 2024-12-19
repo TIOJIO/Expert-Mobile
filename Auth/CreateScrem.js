@@ -1,42 +1,40 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Alert, StyleSheet,Image } from 'react-native';
+import { View, Text, TextInput, Button, Alert, StyleSheet ,Image} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Dialog, Portal, PaperProvider,ActivityIndicator,MD2Colors } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
 
-const LoginScreen = () => {
+const CreateScreen = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigation = useNavigation();
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const hideDialog = () => setVisible(false);
 
-  const handleLogin = async () => {
+  const handleSignUp = async () => {
     
-    if (!email || !password) {
+    if (!username || !email || !password || !confirmPassword) {
       alert('Veuillez remplir tous les champs.');
       return;
     }
 
+    if (password !== confirmPassword) {
+      alert('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
     try {
-      const user = await AsyncStorage.getItem(email);
-      if (user) {
-        const parsedUser = JSON.parse(user);
-        if (parsedUser.password === password) {
-           setVisible(true)
-            setTimeout(() => {
-                setVisible(false)
-                navigation.replace('SearchScreen')
-            }, 2000);
-        } else {
-          alert('Mot de passe incorrect.');
-        }
-      } else {
-         alert("L'utilisateur n'existe pas.");
-      }
+      const user = { username, email, password };
+      await AsyncStorage.setItem(email, JSON.stringify(user));
+        setVisible(true)
+        setTimeout(() => {
+            setVisible(false)
+            navigation.navigate('Login');
+        }, 2000);
+       
     } catch (error) {
-        alert('Une erreur est survenue lors de la connexion.');
+      alert('Une erreur est survenue lors de la création du compte.');
     }
   };
 
@@ -47,7 +45,13 @@ const LoginScreen = () => {
             source={require('../assets/icon.png')}
             style={{marginLeft:110, width: 110, height: 110,borderRadius:100,borderWidth:1,borderColor:'white',textAlign:'center' }}
         />
-      <Text style={styles.title}>Se connecter</Text>
+      <Text style={styles.title}>Créer un compte</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Nom d'utilisateur"
+        value={username}
+        onChangeText={setUsername}
+      />
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -62,7 +66,14 @@ const LoginScreen = () => {
         value={password}
         onChangeText={setPassword}
       />
-      <Button title="Se connecter" onPress={handleLogin} />
+      <TextInput
+        style={styles.input}
+        placeholder="Confirmer le mot de passe"
+        secureTextEntry
+        value={confirmPassword}
+        onChangeText={setConfirmPassword}
+      />
+      <Button title="Créer un compte" onPress={handleSignUp} />
     </View>
 
      <Portal >
@@ -72,7 +83,7 @@ const LoginScreen = () => {
             </Dialog.Content>
         
           </Dialog>
-      </Portal>
+        </Portal>
     </PaperProvider>
   );
 };
@@ -99,4 +110,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default CreateScreen;
+  

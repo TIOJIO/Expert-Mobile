@@ -19,7 +19,7 @@ const SearchScreen = ({ navigation }) => {
       }, 2000);
     } else {
       setLoading(false)
-      alert('veillez entrer une recherche !')
+      alert('veillez entrer votre recherche !')
       console.log("Champ de saisie vide !");
     }
   };
